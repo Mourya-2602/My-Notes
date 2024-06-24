@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://kit.fontawesome.com/91abd10b8f.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <style>
+    body {
+  background-image: url("https://images.unsplash.com/photo-1597839219216-a773cb2473e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGFyayUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60");
+  background-position: center;
+  background-size: cover;
+  /* width: 980px; */
+  /* height: 500px; */
+  /* border-radius: 8px; */
+  position: relative;
+  z-index: 2; 
+  /* font-family: 9px "Poppins", sans-serif; */
+}
+    .card{
+      background-image: url("https://images.unsplash.com/photo-1597839219216-a773cb2473e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGFyayUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60");
+  background-position: center;
+  background-size: cover;
+  /* width: 980px; */
+  /* height: 500px; */
+  /* border-radius: 8px; */
+  position: relative;
+  z-index: 2; 
+        margin: 1rem;
+        background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+    }
+    .butto{
+        display: flex;
+  justify-content: space-between;
+    }
+
+    .row{
+      padding-left: 150px;
+    }
+    .newNotes{
+      text-align: center;
+    }
+  </style>
+
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <!-- <link rel="stylesheet" href="/stylesheets/index.css" /> -->
+    <title>All Products</title>
+</head>
+
+<body>
+    <h1 style="text-align: center; color: #fff;">My Notes</h1>
+    <a href="/">Home</a>
+    
+    <div class="newNotes">
+      <a class="btn btn-info"href="/products/new" >Add New Notes</a>
+    </div>
+    
+    <div class="row">
+        
+        <% for(let product of products) { %>
+
+          <div class="card col-lg-3 col-md-4 col-sm-6 " >
+            
+            <div class="card-body overflow-hidden" style="height: 200px;" onclick="window.location.href = '/products/<%=product._id%>';">
+              <!-- <div class="card-body" style="height: 150px; overflow-y: auto;"> -->
+                <h5 class="card-title" style="z-index: 1;
+                color: white;
+                font-size: 40px;
+                font-family: 'Raleway', sans-serif;"><%= product.title %></h5>
+                <p class="card-text" style="color: #fff;
+                text-align: justify;
+                font-size: 20px;">
+                    <%= product.description %>
+                </p>
+            </div>
+        
+        
+        
+          </div>
+        <% } %>
+      </div>
+
+    
+</body>
+
+</html>

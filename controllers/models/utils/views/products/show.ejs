@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://kit.fontawesome.com/91abd10b8f.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/index.css" />
+</head>
+
+<body>
+    
+    <div class="mb-3">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;font-weight: bold;"><%= product.title %></h5>
+          <p class="card-text"><%= product.description%></p>
+          <div class="d-flex">
+          <button type="button" class="btn btn-primary mr-2" onclick="window.location.href='/products/<%=product._id%>/edit';">Edit</button>
+          <a href="/products" class="btn btn-secondary mr-2">Home</a>
+
+          
+          <form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger mr-2">Delete</button>
+        </form>
+    </div>
+
+        </div>
+        
+      </div>
+    </div>
+      
+      
+
+    
+      
+
+</body>
+
+</html>
